@@ -161,7 +161,7 @@ def detect_it2(iset, varset, a, b, fd, fdt):
         
     return a, b, fd, fdt
 
-#%% Multiple-form Circle Detection without removal ~70 seconds
+#%% Multiple-form Circle Detection
 for file in qq:
     base = os.path.basename(file)
     bn=base[:-8] #reduce file name to base file name    
@@ -378,7 +378,7 @@ def detect_it2(iset, varset, a, b, fd, fdt):
         
     return a, b, fd, fdt
 
-#%% Multiple-form Circle Detection without removal ~70 seconds
+#%% Multiple-form Circle Detection with removal
 for file in qq:
     base = os.path.basename(file)
     bn=base[:-8] #reduce file name to base file name    
