@@ -20,11 +20,11 @@ from PIL import Image
 
 #%% Variables
 setname1 = 'xmde1' #input set name
-setname2 = 'LWPout1' #output set name
-setname3 = 'LWPout2' #output set name
-setname4 = 'LWPout3' #output set name
-setname5 = 'LWPout4' #output set name
-setname6 = 'LWPout5' #output set name
+setname2 = 'OutputSetName1' #output set name
+setname3 = 'OutputSetName2' #output set name
+setname4 = 'OutputSetName3' #output set name
+setname5 = 'OutputSetName4' #output set name
+setname6 = 'OutputSetName5' #output set name
 qq=glob.glob('E:/Sets/' + setname1 + '/*.png')
 opath1 = 'E:/Sets/' + setname2 + '/'
 opath2 = 'E:/Sets/' + setname3 + '/'
@@ -51,7 +51,7 @@ def bright_it1(image):
     cv2.imwrite(opath2+os.path.basename(image),(cv2.multiply(cv2.imread(image,0),255/(cv2.imread(image,0).max()))))
     
 def bright_it2(image):
-    cv2.imwrite(opath5+os.path.basename(image),(cv2.multiply(cv2.imread(image,0),255/(cv2.imread(image,0).max()))))
+    cv2.imwrite(opath4+os.path.basename(image),(cv2.multiply(cv2.imread(image,0),255/(cv2.imread(image,0).max()))))
 
 crop150_time = time.time()
 with ThreadPoolExecutor(20) as executor:
@@ -161,7 +161,7 @@ def detect_it2(iset, varset, a, b, fd, fdt):
         
     return a, b, fd, fdt
 
-#%% Multiple-form Circle Detection
+#%% Multiple-form Circle Detection without removal ~70 seconds
 for file in qq:
     base = os.path.basename(file)
     bn=base[:-8] #reduce file name to base file name    
@@ -276,6 +276,12 @@ print(f"--- %.4f seconds ---" % (time.time() - crop80_time))
 
 qq = glob.glob(opath3+'*.png')
 
+bright2_time = time.time()
+with ThreadPoolExecutor(20) as executor:
+    {executor.submit(bright_it2, image) for image in qq}
+print(f"--- %.4f seconds ---" % (time.time() - bright2_time))
+
+qq = glob.glob(opath4+'*.png')
 
 redux_time = time.time()
 #%% Variables
@@ -378,7 +384,7 @@ def detect_it2(iset, varset, a, b, fd, fdt):
         
     return a, b, fd, fdt
 
-#%% Multiple-form Circle Detection with removal
+#%% Multiple-form Circle Detection
 for file in qq:
     base = os.path.basename(file)
     bn=base[:-8] #reduce file name to base file name    
@@ -479,21 +485,11 @@ for file in remqq:
 #%% Moving center
 rec=0
 for file in qq:      
-    cf(file, opath4+os.path.basename(file))
+    cf(file, opath5+os.path.basename(file))
     rec+=1
 
 #%% Timer                                
 print(f"--- %.4f seconds ---" % (time.time() - redux_time))
-
-
-qq = glob.glob(opath4+'*.png')
-
-
-bright2_time = time.time()
-with ThreadPoolExecutor(20) as executor:
-    {executor.submit(bright_it2, image) for image in qq}
-print(f"--- %.4f seconds ---" % (time.time() - bright2_time))
-
 
 #%% Timer
 print(f"--- Full script complete in %.4f seconds ---" % (time.time() - full_time))
