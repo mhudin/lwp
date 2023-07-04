@@ -94,7 +94,7 @@ medb=[] #holder
 fl=[] #holder for file list in set
 tfc=0 #holder
 
-#%% New variables 05232023
+#%% New variables
 rotlist=[0,90,180,270] #list of rotations
 
 #%% Define circle detector
@@ -311,7 +311,7 @@ maxrad=28
 minrad1=13
 minrad2=14
 
-#%% New variables 05232023
+#%% New variables
 rotlist=[0,90,180,270] #list of rotations
 
 #%% Define circle detector
