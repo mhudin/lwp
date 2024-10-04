@@ -10,4 +10,5 @@ The associated code is in the project folder:
 
 *The code presented here is made publicly available and provided without any formal license. However, we kindly ask that you reference us if you decide to use this code.
 
+Reference:
 Michael H. Udin, Sara Armstrong, Alice Kai, Scott Doyle, Ciprian N. Ionita, Saraswati Pokharel, Umesh C. Sharma, Lightweight preprocessing and template matching facilitate streamlined ischemic myocardial scar classification, J. Med. Imag. 11(2), 024503 (2024), doi: 10.1117/1.JMI.11.2.024503. 
