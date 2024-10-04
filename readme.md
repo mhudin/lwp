@@ -6,8 +6,7 @@ The associated code is in the project folder:
 * CNNs.py – This file contains the code for the ResNet50 and ResNet152V2 networks. Path strings will likely require changes.
 * extractor.py – This file contains the code used to extract the image data from the DICOM. Unfortunately, we were not able to provide the DICOMs or other data due to IRB restrictions, but it should work on similarly-constructed DICOMs
 * templatematching.py – This is the code that contains our template matching-based classification.
-  
-  
+<br><br><br>
 *The code presented here is made publicly available and provided without any formal license. However, we kindly ask that you reference us if you decide to use this code.
 
 Reference:    
