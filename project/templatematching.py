@@ -18,9 +18,9 @@ import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 #%% Path Info
-qq = glob.glob('E:/Sets/notm/*.png') #source folder for negative cases
-rr = glob.glob('E:/Sets/yetm/*.png') #source folder for positive cases
-bb = glob.glob('E:/Sets/basecheck/*.png') #source folder for external testing dataset
+qq = glob.glob('C:/NegativeTemplateSet/*.png') #source folder for negative cases
+rr = glob.glob('C:/PositiveTemplateSet/*.png') #source folder for positive cases
+bb = glob.glob('C:/ExternalDataset/*.png') #source folder for external testing dataset
 
 #%% Setup Variables
 tset = 0.73 #set threshold
